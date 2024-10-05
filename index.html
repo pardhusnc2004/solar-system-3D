@@ -3,14 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>three.js</title>
+    <title>Space Apps Challenge 2024</title>
     <style>
       body {
         overflow: hidden;
         margin: 0px;
       }
+
+      /* Styling for the note */
+      #note {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        z-index: 100; /* Ensure it stays on top */
+      }
     </style>
-    <title>Solar System : Explore the 3D Solar System</title>
     <meta name="authors" content="pathseekers" />
     <meta name="robots" content="index, follow" />
     <meta
@@ -30,9 +43,9 @@
       property="og:description"
       content="The Solar System 3D Visualization project is an interactive web-based application that allows users to explore the Solar System in a three-dimensional environment. The project is developed using the Three.js library, which provides powerful tools for creating 3D content on the web. Users can witness the rotation of planets around the Sun and their self-rotation, as well as enjoy the beauty of space in this immersive experience."
     />
-    
     <meta property="og:type" content="website" />
-    
+
+    <!-- Analytics and Favicon -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-4J64SC1QY7"
@@ -50,11 +63,16 @@
       name="google-site-verification"
       content="5QsjbXuM1buDwEtnxWDKN9dE1qgf_dgz646EdwUxSWg"
     />
-
     <link rel="icon" type="image/png" href="./image/solar-system.png" />
-    <script type="text/javascript" src="./min.js/dat.gui.min.js"></script>
   </head>
   <body>
+    <!-- Note displaying scale information -->
+    <div id="note">* Sizes, Distances, Speeds etc.. of Objects are not to scale</div>
+
+    <!-- Load the main solar system JS -->
     <script src="./js/solarSystem.js" type="module"></script>
+
+    <!-- Include dat.GUI for controls -->
+    <script type="text/javascript" src="./min.js/dat.gui.min.js"></script>
   </body>
 </html>
